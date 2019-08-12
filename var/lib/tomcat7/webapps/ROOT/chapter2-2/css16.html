@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>display 프로퍼티</title>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<style>
+div {
+	display:inline-block;
+	height:50px;
+	width:50px;
+	border:1px solid lightgray;
+	text-align:center;
+	color:white;
+	background:red;
+	}
+/*hover는 마우스가 올라 갈 때 스타일 적용*/
+#down:hover{
+	position:relative;
+	left:20px;
+	top:20px;
+	background:green;
+	}
+#up:hover{
+	position:relative;
+	left:20px;
+	top:20px;
+	background:green;
+	}
+</style>
+</head>
+<body>
+<h3>상대 배치, relative</h3>
+<hr>
+	<div>T</div>
+	<div id="down">h</div>
+	<div >a</div>
+	<div>n</div>
+	<div id="up">k</div>
+	<div>s</div>
+</body>
+</html>

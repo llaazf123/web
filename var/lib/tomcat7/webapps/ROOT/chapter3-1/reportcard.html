@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<SCRIPT>
+var student_id = new Array();
+let name = [];	//이름 배열(var로 하면 undefined라고만 뜬다..)
+var kor = new Array();
+var eng = new Array();
+var mat = new Array();
+	
+var sum = 0;
+var ave = 0;
+	
+
+var sumkor=0;	//현재페이지용
+var sumeng=0;
+var summat=0;
+var sumsum=0;
+var sumave=0;			//메서드끼리 공유할 변수들
+	
+var totalsumkor=0;	//누적페이지용
+var totalsumeng=0;
+var totalsummat=0;
+var totalsumsum=0;
+var totalsumave=0;
+		
+var sumkorr=0;	//누적페이지용
+var sumengg=0;
+var summatt=0;
+var sumsumm=0;
+
+var pagecount =0;	//pagecount는 현재페이지용
+var pagecount2=0;	//pagecount2는 누적페이지용
+	
+	
+var iPerson=200;	
+var limit_person=30;
+var d = new Date();
+var currentDate = d.getFullYear() + "-" + pad((d.getMonth() + 1 ),2) + "-" + pad(d.getDate(),2);
+var currentTime = d.getHours() + ":" + d.getMinutes();
+function pad(n, width) {
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+}
+
+</SCRIPT>
+</HEAD>		
+<BODY>	
+<SCRIPT>
+		for (var i=0; i<iPerson; i++) {	//200번 반복(200명)
+			student_id[i]=pad(i+1, 3);
+			name[i] = "홍길" + pad(i, 2);	
+			kor[i] = Math.floor(Math.random()*100);	
+			eng[i] = Math.floor(Math.random()*100);
+			mat[i] = Math.floor(Math.random()*100);
+	}	
+		document.write("<Table>");
+		document.write("<tr><td align=center colspan=7>성적집계표</td></tr>");
+		document.write("<tr><td colspan=2>출력일자:</td>")
+		document.write("<td colspan=5>" + currentDate + " " + currentTime + "</td></tr>")
+		document.write("<tr><td colspan=7>***********************************************</td></tr>");
+		document.write("<tr><td width=38>번호</td>")
+		document.write("<td width=65>이름</td>")
+		document.write("<td width=40>국어</td>")
+		document.write("<td width=40>영어</td>")
+		document.write("<td width=40>수학</td>")
+		document.write("<td width=40>합계</td>")
+		document.write("<td width=40>평균</td></tr>")
+		document.write("<tr><td colspan=7>***********************************************</td></tr>");
+		document.write("</Table>");
+		
+	for(var i=0; i<iPerson;i++) {
+		sum = kor[i]+eng[i]+mat[i];
+		ave = Math.ceil(sum/3);
+		if(i == limit_person) {			// 한페이지에 출력 인원이 꽉 찼을 경우
+		document.write("<Table>");
+		document.write("<tr><td colspan=6>***********************************************</td></tr>");
+		document.write("<tr><td colspan=6>현재페이지</td></tr>");
+		document.write("<tr><td width=90>합계</td>");
+		document.write("<td>" + sumkor + "</td>")
+		document.write("<td>" + sumeng + "</td>")
+		document.write("<td>" + summat + "</td>")
+		document.write("<td>" + sumsum + "</td>")
+		document.write("<td>" + sumave + "</td></tr>")
+		document.write("<tr><td>평균</td>");
+		document.write("<td align=center>" + Math.ceil(sumkor/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumeng/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(summat/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumsum/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumave/pagecount) + "</td>")
+		document.write("<tr><td colspan=6>***********************************************</td></tr>");
+		document.write("<tr><td colspan=6>누적페이지</td></tr>");
+		document.write("<tr><td width=90>합계</td>");
+		document.write("<td>" + totalsumkor + "</td>")
+		document.write("<td>" + totalsumeng + "</td>")
+		document.write("<td>" + totalsummat + "</td>")
+		document.write("<td>" + totalsumsum + "</td>")
+		document.write("<td>" + totalsumave + "</td></tr>")
+		document.write("<tr><td>평균</td>");
+		document.write("<td align=center>" + Math.ceil(totalsumkor/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumeng/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsummat/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumsum/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumave/pagecount2) + "</td>")
+		document.write("</Table>");
+		pagecount=0;
+		document.write("<br>")
+		document.write("<br>")
+		
+		document.write("<Table>");
+		document.write("<tr><td align=center colspan=7>성적집계표</td></tr>");
+		document.write("<tr><td colspan=2>출력일자:</td>")
+		document.write("<td colspan=5>" + currentDate + " " + currentTime + "</td></tr>")
+		document.write("<tr><td colspan=7>***********************************************</td></tr>");
+		document.write("<tr><td width=38>번호</td>")
+		document.write("<td width=65>이름</td>")
+		document.write("<td width=40>국어</td>")
+		document.write("<td width=40>영어</td>")
+		document.write("<td width=40>수학</td>")
+		document.write("<td width=40>합계</td>")
+		document.write("<td width=40>평균</td></tr>")
+		document.write("<tr><td colspan=7>***********************************************</td></tr>");
+		document.write("</Table>");
+		
+			sumkor=0;					// 페이지 합 초기화
+			sumeng=0;
+			summat=0;
+			sumsum=0;
+			sumave=0;
+			limit_person = i + 30;
+		}
+		document.write("<Table>");
+		document.write("<tr><td align= center width=30>" + student_id[i] + "</td>")
+		document.write("<td width=59>" + name[i] + "</td>")
+		document.write("<td width =40 align=right>" + kor[i] + "</td>")
+		document.write("<td width =40 align=right>" + eng[i] + "</td>")
+		document.write("<td width =40 align=right>" + mat[i] + "</td>")
+		document.write("<td width =40 align=right>" + sum + "</td>")
+		document.write("<td width =40 align=right>" + ave + "</td>")
+		document.write("</Table>");
+		
+		sumkor = sumkor + kor[i];
+		sumeng = sumeng + eng[i];
+		summat = summat + mat[i];
+		sumsum = sumsum + sum;
+		sumave = sumave + ave;	//sumave = sumave + rec.ave()을 의미, 합계를 누적하여 연산
+
+		totalsumkor = totalsumkor + kor[i];
+		totalsumeng = totalsumeng + eng[i];
+		totalsummat = totalsummat + mat[i];
+		totalsumsum = totalsumsum + sum;
+		totalsumave = totalsumave + ave;
+		pagecount++;
+		pagecount2++;
+
+	}
+		document.write("<Table>");
+		document.write("<tr><td colspan=6>***********************************************</td></tr>");
+		document.write("<tr><td colspan=6>현재페이지</td></tr>");
+		document.write("<tr><td width=90>합계</td>");
+		document.write("<td>" + sumkor + "</td>")
+		document.write("<td>" + sumeng + "</td>")
+		document.write("<td>" + summat + "</td>")
+		document.write("<td>" + sumsum + "</td>")
+		document.write("<td>" + sumave + "</td></tr>")
+		document.write("<tr><td>평균</td>");
+		document.write("<td align=center>" + Math.ceil(sumkor/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumeng/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(summat/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumsum/pagecount) + "</td>")
+		document.write("<td align=center>" + Math.ceil(sumave/pagecount) + "</td>")
+		document.write("<tr><td colspan=6>***********************************************</td></tr>");
+		document.write("<tr><td colspan=6>누적페이지</td></tr>");
+		document.write("<tr><td width=90>합계</td>");
+		document.write("<td>" + totalsumkor + "</td>")
+		document.write("<td>" + totalsumeng + "</td>")
+		document.write("<td>" + totalsummat + "</td>")
+		document.write("<td>" + totalsumsum + "</td>")
+		document.write("<td>" + totalsumave + "</td></tr>")
+		document.write("<tr><td>평균</td>");
+		document.write("<td align=center>" + Math.ceil(totalsumkor/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumeng/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsummat/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumsum/pagecount2) + "</td>")
+		document.write("<td align=center>" + Math.ceil(totalsumave/pagecount2) + "</td>")
+		document.write("</Table>");
+		pagecount=0;
+
+</SCRIPT>
+</BODY>
+</HTML>
+		

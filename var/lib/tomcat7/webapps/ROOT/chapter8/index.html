@@ -1,0 +1,44 @@
+<html>
+<head>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<title>조아리조트에 오신것을 대 환영합니다 </title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+   crossorigin="anonymous"></script>
+<script>
+   $(document).ready(function() {
+      $("#top").load("a.html")
+   });
+</script>
+<script>
+   $(document).ready(function() {
+      $("#main").load("<%=contentPage%>")
+   });
+</script>
+<%String contentPage = request.getParameter("contentPage");%>
+</head>
+<body>
+
+	<div id="top">
+      </div>
+	<div id="main" name=main>
+    </div>
+
+</body>
+</html>
+
+<!--<html>
+<head>
+한글깨짐 방지
+<meta charset="utf-8">
+<title>조아리조트에 오신것을 대 환영합니다 </title>
+
+<frameset rows="100,*" frameborder="0" border="0" frameborder="1">
+	<frame src = "top.html">
+	<frame src = "main.html" name=main>
+</frameset>
+</head>
+<body>
+</body>
+</html>-->

@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<SCRIPT>
+var taxfreee = 0;
+var sum_taxfreee = 0;
+var normal = 0;
+var sum_normal = 0;
+var itemname = new Array("초코파이", "바나나우유", "건포도", "오렌지주스", "초코에몽", "바나나파이", "레몬파이", "진짜포도", "딸기우유", "슬리퍼", 
+				"운동화", "스타벅스커피", "커피빈커피", "선선생님교재", "베스트셀러모음집", "타임머신", "핵폭탄", "칼", "포크", "애기장난감", 
+				"딸랑이", "치약", "칫솔", "감", "감자", "모발모발", "이발", "피부미용권", "도와줘요넘버원", "볼펜");	//항목명
+		
+var price = new Array(1000, 2500, 3300, 25000, 100, 10000, 2500, 3000, 4500, 5000, 
+			4333, 3100, 5000, 90000, 9000, 5100, 3100, 2500, 5800, 6433, 
+			2544, 7900, 36800, 3000, 2500, 1500, 1000, 3000, 3100, 10000);	//단가
+var num = new Array(2, 4, 1, 1, 10, 3, 2, 5, 1, 1, 
+			1, 2, 3, 1, 1, 2, 2, 1, 1, 1,
+			1, 1, 1, 1, 2, 1, 2, 3, 5, 10);	//수량
+var taxfree = new Array(true, true, false, true, true, false, false, false, true, false,
+				true, false, false, true, true, false, false, false, false, false, 
+				false,false, true, true, false, false, true, false, false, false);	//면세유무
+		
+var d = new Date();
+var currentDate = d.getFullYear() + "-" + pad((d.getMonth() + 1 ),2) + "-" + pad(d.getDate(),2);
+var currentTime = d.getHours() + ":" + d.getMinutes();
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function pad(n, width) {
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+}
+
+</SCRIPT>
+</HEAD>		
+<BODY>	
+<SCRIPT>
+document.write("<Table>");
+document.write("e마트<br>");
+document.write("영수증 미지참시 교환/환불 불가(30일내)<br>");
+document.write("교환/환불 구매점에서 가능(결제카드지참)<br>");
+document.write("<br>");
+document.write("<tr><td align=left colspan=2>[구매]" + currentDate + "&nbsp;"+ currentTime + "</td>");
+document.write("<td align=right colspan=2>POS:0009-2418</td></tr>");
+document.write("<tr><td colspan=4><hr></td></tr>");
+document.write("<tr>");
+document.write("<td align=center width =150 >상품명</td>");
+document.write("<td align=center width =120>단가</td>");
+document.write("<td align=center width=35>수량</td>");
+document.write("<td align=center width=75>금액</td>");
+document.write("</tr>");
+document.write("<tr><td colspan=4><hr></td></tr>");
+document.write("</Table>");
+for(var i=0;i<30;i++) {
+		document.write("<Table>");
+		document.write("<tr>");
+		if(taxfree[i] == true) {	//i에 해당되는 taxfree 값이 true이면
+			taxfreee = price[i] * num[i];	//taxfreee는 i에 해당되는 가격과 수량을 곱한 값을 저장
+			sum_taxfreee = sum_taxfreee + taxfreee;	//sum_taxfreee는 기존의 sum_taxfreee에 taxfreee를 저장
+			document.write("<td align=center width =30>"+pad((i+1), 2)+"&nbsp;*</td>");
+		}else {	//그렇지 않으면
+			normal = price[i] * num[i];	//normal는 i에 해당되는 가격과 수량을 곱한 값을 저장
+			sum_normal = sum_normal + normal;	//sum_normal는 기존의 sum_normal에 normal값을 저장해 누적
+			document.write("<td align=center width =30>"+pad((i+1), 2)+"&nbsp;&nbsp;</td>");
+		}
+		
+		document.write("<td align=left width =150>"+itemname[i]+"</td>");
+		document.write("<td align=right width =50>"+numberWithCommas(price[i])+"</td>");
+		document.write("<td align=right width =70>"+numberWithCommas(num[i])+"</td>");
+		document.write("<td align=right width =70>"+numberWithCommas(price[i]*num[i])+"<br></td>");
+		document.write("</tr>");
+		document.write("</Table>");
+}
+		document.write("<Table>");
+		document.write("<tr><td align=right width=220>(*)면 세 물 품 </td>");
+		document.write("<td align=right width=130>" + numberWithCommas(sum_taxfreee) + "</td></tr>");
+		document.write("<tr><td align=right width=80>과 세 물 품 </td>");
+		document.write("<td align=right width=130>" + numberWithCommas(Math.floor(sum_normal/1.1)) + "</td></tr>");
+		document.write("<tr><td align=right width=80>부&nbsp;&nbsp;&nbsp;가&nbsp;&nbsp;&nbsp;세 </td>");
+		document.write("<td align=right width=130>" + numberWithCommas(Math.ceil(sum_normal-(sum_normal/1.1))) + "</td></tr>");
+		document.write("<tr><td align=right width=80>합&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;계</td>");
+		document.write("<td align=right width=130>" + numberWithCommas(sum_taxfreee + sum_normal) + "</td></tr>")
+		document.write("<tr><td align=left width=80>결 제 대 상 금 액 </td>");
+		document.write("<td align=right width=130>" + numberWithCommas(sum_taxfreee + sum_normal) + "</td></tr>")
+		document.write("<tr><td colspan=2><hr></td></tr>");
+		document.write("<tr><td align=left width=200>0024 하  나 </td>");
+		document.write("<td align=right width=130>5417**8890/07850246</td></tr>")
+		document.write("<tr><td align=left width=70>카드결제  </td>");		
+		document.write("<td align=right width=130>일시불 /" + numberWithCommas(sum_taxfreee + sum_normal) + "</td></tr>")
+		document.write("<tr><td colspan=2><hr></td></tr>");
+		document.write("</Table>");
+
+</SCRIPT>
+</BODY>
+</HTML>
+		

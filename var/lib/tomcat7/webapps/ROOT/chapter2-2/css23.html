@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><title>리스트로 메뉴 만들기</title>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<style>
+#menubar{
+	background:olive
+}
+/*전체 큰 틀*/
+#menubar ul{	/*여백과 패딩 모두 0*/
+	margin:0;
+	padding:0;
+	width:567px;	/*모든 아이템(<li>)을 한 줄에 품을 수 있는 폭*/
+}
+/*칸 크기*/
+#menubar ul li{
+	display:inline;	/*새 줄로 넘어가지 않게*/
+	list-style-type:none;	/*기본적인 마커 삭제*/
+	padding:0px 15px;	/*top=bottom=0; left=right=15px*/
+}
+/*칸 안의 글자 색상*/
+#menubar ul li a{
+	color:white;
+	text-decoration:none;	/*밑줄링크 보이지 않게*/
+}
+/*hover는 마우스가 올라갈때 스타일 적용*/
+#menubar ul li a:hover{
+	color:violet;	/*마우스 올라 갈 때 색*/
+}
+</style>
+</head>
+<body>
+<nav id="menubar">
+	<ul>
+		<!--href는 링크 연결할 때 사용-->
+		<li><a href="http://www.naver.com/">Home</a></li>
+		<li><a href="#">Espresso</a></li>
+		<li><a href="#">Cappuccino</a></li>
+		<li><a href="#">Cafe Latte</a></li>
+		<li><a href="#">F.A.Q</a></li>
+	</ul>
+</nav>
+</body>
+</html>

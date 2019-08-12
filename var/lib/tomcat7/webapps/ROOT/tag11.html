@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>제목줄입니다</title>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+</head>
+<body>
+<!--FORM METHOD는 양식의 방법을 정의-->
+<FORM METHOD=POST name='fm'>
+<!--table 크기 정의-->
+<table width=650 border=1 cellspacing=0 cellpadding=5>
+	<!--tr과 td는 표 내부에 들어갈 형식 정의-->
+	<tr>
+		<td><b>번호</b></td>
+		<!--input type은 어떤 형태로 입력할 것인지 정의-->
+		<td><input type=text name=id size=70 maxlength=70 value=1 readonly>
+		</td>
+	</tr>
+	<tr>
+		<td><b>성별</b></td>
+		<td>
+			<!--select는 선택사항 상자를 만듦-->
+			<select name=sex>
+				<option value='M' selected>남자
+				<option value='W'>여자
+			</selected>
+		</td>
+	</tr>
+	<tr>
+		<td><b>성명</b></td>
+		<td><input type=text name=name size=70 maxlength=70 value='레이나'></td>
+	</tr>
+	<tr>
+		<td><b>주소</b></td>
+		<td><input type=text name=addr size=70 maxlength=70 value='서울시 어딘가 살고 있군'></td>
+	</tr>
+	<tr>
+		<td><b>전화번호</b></td>
+		<td><input type=text name=tel size=70 maxlength=70 value=''></td>
+	</tr>
+</table>
+
+</FORM>
+</body>
+</html>

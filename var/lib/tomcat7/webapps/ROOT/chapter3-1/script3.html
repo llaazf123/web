@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<SCRIPT>
+<!--prompt는 화면에 문자를 쓰고, 초기값을 넣어줌-->
+name=prompt("Enter Name", "홍길동");
+<!--confirm은 화면에 경고문구와 확인, 취소버튼을 출력-->
+if(confirm("Continue ?\nClick Button")==true){
+	answer='true';
+}else{
+	answer='false';
+}
+<!--alert는 String을 경고문으로 출력-->
+alert("Name:"+name+"\nAnswer:"+answer);
+document.write("Your Name is "+answer);
+</SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><title>셀렉터 만들기</title>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<style>
+/*h3랑 li에 적용*/
+h3, li{/*태그 이름 셀렉터 */
+	color:brown;
+	}
+/*div 아래 div 아래 strong에만 적용, 특정 strong에만 적용할 때*/
+div > div > strong{/*자식 셀렉터*/
+	background:yellow;
+	}
+/*ul 아래에 있는 strong 전체*/	
+ul strong{/*자손 셀렉터*/
+	color:dodgerblue;
+}
+/*클래스 warning에 적용*/
+.warning{/*class 셀렉터*/
+	color:grey;
+}
+/*body class main에 적용, body 생략 가능*/
+body.main{/*class 셀렉터*/
+	background:aliceblue;
+}
+/*id가 list인 곳에 적용*/
+#list{/*id 셀렉터*/
+	background:mistyrose;
+}
+/*id가 list인 곳 아래 span 전체에 적용*/
+#list span{/*자손 셀렉터*/
+	color:forestgreen;
+}
+/*h3 첫글자에 적용, 이미 시스템에 만들어져 있는 셀렉터들*/
+h3:first-letter{/*가상 클래스 셀렉터*/
+	color:red
+}
+/*li에 마우스가 올라갈 때 스타일 적용, 이미 시스템에 만들어져 있는 셀렉터들*/
+li:hover{/*가상 클래스 셀렉터*/
+	background:yellowgreen;
+}
+</style>
+</head>
+<body class="main">
+<h3>Web Programming</h3>
+<hr>
+<div>
+	<div>2학기 
+		<strong>학습 내용</strong>입니다.
+	</div>
+<ul id="list">
+	<li><span>HTML5</span></li>
+	<li><strong>CSS</strong></li>
+	<li>JAVASCRIPT</li>
+</ul>
+<div class="warning">60점 이하는 F</div>
+</div>
+</body>
+</html>

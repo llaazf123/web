@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<SCRIPT>
+var name = "Hello";
+<!--지역변수 출력-->
+function call1(){
+	var name = "World";
+	document.write("지역 : "+name);
+}
+<!--전역변수 출력-->
+function call2(){
+	document.write("전역 : "+name);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT>call1();</SCRIPT>
+<SCRIPT>call2();</SCRIPT>
+</BODY>
+</HTML>

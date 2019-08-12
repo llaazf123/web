@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>display 프로퍼티</title>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<style>
+div {
+	border:2px solid yellowgreen;
+	color:blue;
+	background:aliceblue;
+	}
+span{
+	border:3px dotted red;
+	background:yellow;
+	}
+</style></head>
+<body>
+<h3>인라인, 인라인 블록, 블록</h3>
+<hr>
+<!--none이라 보이지 않음-->
+나는	<div style="display:none">div(none)</div>입니다.
+	<br><br>
+<!--inline은 글자 수에 딱 맞는 칸-->
+나는	<div style="display:inline">div(inline)</div>입니다.
+	<br><br>
+<!--inline-block은 글자 수에 딱 맞는 칸 + 크기 조절도 가능-->
+나는	<div style="display:inline-block;height:50px">div(inline-block)</div>입니다.
+	<br><br>
+<!--display-block은 그냥 화면에 꽉찬 칸 + 크기 조절도 가능-->
+나는	<div>div
+	<span style="display:block">span(block)
+	</span>입니다.
+	</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>리조트</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+$(function(){
+   $("#a_01").click(function(){ 
+      $("#main").load("a_01.html");      
+   });
+   $("#a_02").click(function(){ 
+      $("#main").load("a_02.html");      
+   });
+   $("#a_03").click(function(){ 
+      $("#main").load("a_03.html");      
+   });
+   $("#b_01").click(function(){ 
+      $("#main").load("b_01.html");      
+   });
+   $("#b_02").click(function(){
+      $("#main").load("b_02.html");      
+   });
+   $("#b_03").click(function(){ 
+      $("#main").load("b_03.html");      
+   });
+   $("#c_01").click(function(){ 
+      $("#main").load("c_01.html");      
+   });
+   $("#c_02").click(function(){ 
+      $("#main").load("c_02.html");      
+   });
+   $("#c_03").click(function(){ 
+      $("#main").load("c_03.html");      
+   });   
+   $("#d_01").click(function(){ 
+      $("#main").load("d_01.jsp");      
+   });   
+   $("#d_02").click(function(){ 
+      $("#main").load("d_02.jsp");      
+   });   
+   $("#adm_allview").click(function(){ 
+      $("#main").load("adm_allview.jsp");      
+   });   
+   $("#adm_logout").click(function(){ 
+      $("#main").load("adm_logout.jsp");      
+   });  
+});
+</script>
+</head>
+<body>
+<!--<nav class="navbar fixed-top navbar-light bg-light">-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<!-- 메뉴의 홈페이지 이름 -->
+	<a class="navbar-brand" href="index.jsp">Navbar</a>
+	<!-- 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.) -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"/>
+	</button>
+	<!-- 메인 메뉴 아이템 -->
+	<!--<div class="container">--> 
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+
+			<!-- Dropdown 메뉴 -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					객실
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" id="a_01">그랜드호텔(메인타워)</a>
+					<a class="dropdown-item" id="a_02">팰리스호텔</a>
+					<a class="dropdown-item" id="a_03">힐 콘도</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					찾아오기
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" id="b_01">찾아오는길</a>
+					<a class="dropdown-item" id="b_02">대중교통이용</a>
+					<a class="dropdown-item" id="b_03">자가용이용</a>
+				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					카지노
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" id="c_01">카지노 소개</a>
+					<a class="dropdown-item" id="c_02">시설안내</a>
+					<a class="dropdown-item" id="c_03">입장안내</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					예약하기
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" id="d_01">예약상황</a>
+					<a class="dropdown-item" id="d_02">예약하기</a>
+					<a class="dropdown-item" id="adm_allview">관리자페이지</a>
+					<a class="dropdown-item" id="adm_logout">관리자로그아웃</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					리조트소식
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">리조트소식</a>
+					<a class="dropdown-item" href="#">이용후기</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--</div>-->
+</nav>
+<!--<div class="container-fluid" name=main id=main> 
+</div>-->
+</html>

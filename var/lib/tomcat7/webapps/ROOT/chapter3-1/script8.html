@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<SCRIPT>
+//키는 poly1 value는 10
+var grades1 = {'poly1':10, 'poly2':6, 'poly3':80};
+var grades2 = {};
+grades2['poly1']=10;
+grades2['poly2']=6;
+grades2['poly3']=80;
+	
+var grades3 = new Object();
+grades3['poly1']=10;
+grades3['poly2']=6;
+grades3['poly3']=80;
+
+//콘솔창(f12 누르면 나옴)에 출력(document는 우리에게 보여지는 창)
+console.log(grades1['poly1']);
+	
+for(key in grades1){
+		document.write("key : "+key+" value : "+grades1[key]+"<br />");
+}
+
+var grades4={
+	'list':{'poly1':10, 'poly2':6, 'poly3':80},
+	'show' : function(){
+		//key값을 가져옴(name도 key)
+		for(var name in this.list){
+			document.write(name+':'+this.list[name]+"<br />");
+		}
+	}
+}
+grades4.show();
+</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

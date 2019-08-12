@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<SCRIPT>
+function call(){
+	MyString = "Hello World Welcome to my world to";
+	//13번째 문자
+	document.write("Test1 : " + MyString.charAt(12) + "<br>");
+	//앞에서부터 to 찾기(t 숫자)
+	document.write("Test2 : " + MyString.indexOf("to") + "<br>");
+	//뒤에서부터 to 찾기(t 숫자)
+	document.write("Test3 : " + MyString.lastIndexOf("to") + "<br>");
+	//시작, 길이
+	document.write("Test4 : " + MyString.substr(6,5) + "<br>");
+	//전체 소문자
+	document.write("Test5 : " + MyString.toLowerCase("AaBbCc") + "<br>");
+	//전체 대문자
+	document.write("Test6 : " + MyString.toUpperCase("AaBbCc") + "<br>");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT>call();</SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+</HEAD>
+<BODY>
+<SCRIPT>
+        // 입력값 제외 function
+        // 입력값의 문자 종류 판별하는 함수 아래 function들에서 활용함.
+        function check_key() { 
+            var char_ASCII = event.keyCode;
+            //숫자
+            if (char_ASCII >= 48 && char_ASCII <= 57)
+                return 1;
+            //영어
+            else if ((char_ASCII >= 65 && char_ASCII <= 90) || (char_ASCII >= 97 && char_ASCII <= 122))
+                return 2;
+            //특수기호
+            else if ((char_ASCII >= 33 && char_ASCII <= 47) || (char_ASCII >= 58 && char_ASCII <= 64)
+                || (char_ASCII >= 91 && char_ASCII <= 96) || (char_ASCII >= 123 && char_ASCII <= 126))
+                return 4;
+            //한글
+            else if ((char_ASCII >= 12592) || (char_ASCII <= 12687))
+                return 3;
+            //그 밖에
+            else
+                return 0;
+        }
+        //한글 영어만 입력하도록 하는 함수
+        function onlyHanEng() {
+            if (check_key() != 3 && check_key() != 2) {
+                event.returnValue = false;
+                alert("한글이나 영문만 입력하세요.");
+                return;//리턴으로 아무것도 안 뱉으면 함수가 끝난다
+            }
+        }
+        // 숫자만 입력하도록 하는 함수
+        function onlyNum() {
+            if(check_key() != 1) {
+            event.returnValue = false;   
+            alert("숫자만 입력할 수 있습니다.");
+            return;
+            }
+        }
+
+</SCRIPT>
+<h1><성적입력추가></h1>
+<form method="post" action = "insertDB.jsp">
+	이름 : <input type="text" name="name" style="ime-mode:active" onkeypress='onlyHanEng()'><br>
+	학번 : <input type="text" value= "자동부여" readonly><br>
+	국어 : <input type = "number" name = "korean" min="0" max="100"><br>
+	영어 : <input type = "number" name = "english" min="0" max="100"><br>
+	수학 : <input type = "number" name = "math" min="0" max="100"><br>
+		<input type = "submit" value = "전송">
+</form>
+</table>
+</BODY>
+</HTML>
