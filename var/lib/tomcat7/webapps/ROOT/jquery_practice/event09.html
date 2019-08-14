@@ -1,0 +1,23 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//button 클릭시, p 태그에 css를 주는 함수
+			$("button").click(function(){
+				$("p").css({"background-color": "yellow", "font-size":"200%"});
+			});
+		});	
+	</script>
+</head>
+<body>
+	<p>김길동</p>
+	<div>02-123-4567</div>
+	<p>이길동</p>
+	<div>042-567-4567</div>
+	<p>동동이</p>
+	<div>051-123-9458</div>
+	<br><br>
+	<button>이름 강조</button>
+</body>

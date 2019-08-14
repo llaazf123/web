@@ -1,0 +1,38 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var xWidth=100;
+			var yHeight=100;
+			//div 클릭시, div width와 height를 각 각 xWidth와 yHeight를 넣고, box라는 클래스를 추가 + xWidth와 yHeight는 10씩 감소시킴
+			$("div").click(function(){
+				$(this).width(xWidth).addClass("box");
+				$(this).height(yHeight).addClass("box");
+				xWidth=xWidth-10;
+				yHeight=yHeight-10;
+			});
+		});
+	</script>
+	<style>
+		/*div의 스타일 및 box 클래스의 스타일*/
+		div{
+			width:100px;
+			height:100px;
+			float:left;
+			margin:5px;
+			background:yellow;
+		}
+		.box{
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<div>박스1</div>
+	<div>박스2</div>
+	<div>박스3</div>
+	<div>박스4</div>
+	<div>박스5</div>
+</body>

@@ -1,0 +1,44 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//button의 b1 클래스를 클릭시,img를 width 100px로 지정
+			$("button.b1").click(function(){
+				$("img").animate({
+				width:'100px'
+				});
+			});	
+			$("button.b2").click(function(){
+				$("img").animate({
+				width:'200px'
+				});
+			});	
+			$("button.b3").click(function(){
+				$("img").animate({
+				width:'300px'
+				});
+			});	
+		});	
+	</script>
+	<style>
+		/*css_pic 클래스 스타일 및 css_pic 클래스의 이미지 스타일*/
+		.css_pic{
+			height:430px;
+			text-align:center;
+		}
+		.css_pic img{
+			width:250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="css_pic">
+		<p>버튼을 누르면 그림의 크기가 바뀝니다.</p>
+		<button class="b1">가로 100픽셀</button>
+		<button class="b2">가로 200픽셀</button>
+		<button class="b3">가로 300픽셀</button><br><br>
+		<img name="pic1" src="pic1.jpg"/>
+	</div>
+</body>

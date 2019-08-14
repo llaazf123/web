@@ -121,7 +121,6 @@ ul {text-align: left;vertical-align: middle;margin: 2;padding: 10;height: 20;bac
 <center>
 
 <div class='container' style='width:device-width;height:device-height;'>
-
 	<!--뒤로가기, 홈버튼이 있는 상단부-->
 	<div class = "header" id = "header1" style="background-color:#00FFFF;height:35px;width:15%;float:left;" onclick='prevShow();'><center>
 		<img src="picture/back.png" width="40px" height="32px"></center>
@@ -136,38 +135,37 @@ ul {text-align: left;vertical-align: middle;margin: 2;padding: 10;height: 20;bac
 		</a>
 	</center>
 	</div>
-	
   <!--메뉴를 눌렀을 때 나오는 소메뉴-->
   <div id="menu0" style="background-color: #eeeeee; display:none; width: device-width;">
   객실
-    <li onclick="ScreenShow(0);">떙떙리조트</li>
-    <li onclick="ScreenShow(1);">그랜드호텔(메인타워)</li>
-    <li onclick="ScreenShow(2);">팰리스호텔</li>
-    <li onclick="ScreenShow(3);">힐 콘도</li>
+    <li style="font-size:1.5em" onclick="ScreenShow(0);">떙떙리조트</li>
+    <li style="font-size:1.5em" onclick="ScreenShow(1);">그랜드호텔(메인타워)</li>
+    <li style="font-size:1.5em" onclick="ScreenShow(2);">팰리스호텔</li>
+    <li style="font-size:1.5em" onclick="ScreenShow(3);">힐 콘도</li>
     <br>
   </div>
   <div id="menu1" style="background-color: #eeeeee; display:none; width: device-width;">
     찾아오기
-      <li onclick="ScreenShow(4);">대중교통이용</li>
-      <li onclick="ScreenShow(5);">자가용이용</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(4);">대중교통이용</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(5);">자가용이용</li>
       <br>
   </div>
   <div id="menu2" style="background-color: #eeeeee; display:none; width: device-width;">
     카지노
-      <li onclick="ScreenShow(6);">카지노 소개</li>
-      <li onclick="ScreenShow(7);">시설안내</li>
-	  <li onclick="ScreenShow(8);">입장안내</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(6);">카지노 소개</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(7);">시설안내</li>
+	  <li style="font-size:1.5em" onclick="ScreenShow(8);">입장안내</li>
       <br>
   </div>
   <div id="menu3" style="background-color: #eeeeee; display:none; width: device-width;">
     예약하기
-      <li onclick="ScreenShow(9);">예약상황</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(9);">예약상황</li>
       <br>
   </div>
   <div id="menu4" style="background-color: #eeeeee; display:none;">
     게시판
-      <li onclick="ScreenShow(10);">리조트소식</li>
-      <li onclick="ScreenShow(11);">이용후기</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(10);">리조트소식</li>
+      <li style="font-size:1.5em" onclick="ScreenShow(11);">이용후기</li>
       <br>
   </div>
 

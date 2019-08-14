@@ -1,0 +1,36 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//ans 태그를 기본적으로 숨김
+			$("ans").hide();
+			//p태그의 q1클래스를 클릭시, ans태그의 q1클래스를 보여줌
+			$("p.q1").click(function(){
+				$("ans.q1").show();
+			});
+			//ans태그의 q1클래스를 클릭시, 자기 자신을 숨김
+			$("ans.q1").click(function(){
+				$(this).hide();
+			});
+			//p태그의 q2클래스를 클릭시, ans태그의 q2클래스를 보여줌
+			$("p.q2").click(function(){
+				$("ans.q2").show();
+			});
+			//ans태그의 q2클래스를 클릭시, 자기 자신을 숨김
+			$("ans.q2").click(function(){
+				$(this).hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>질문1 : 대한민국의 수도는 어디입니까?</h2>
+	<p class="q1">[정답 보기]</p>
+	<ans class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</ans>
+	<br></br>
+	<h2>질문2 : 대한민국의 국보 1호는 무엇입니까?</h2>
+	<p class="q2">[정답 보기]</p>
+	<ans class="q2">대한민국의 국보 1호는 <strong>숭례문</strong>입니다.</ans>
+</body>

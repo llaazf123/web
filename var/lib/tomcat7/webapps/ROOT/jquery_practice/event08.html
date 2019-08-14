@@ -1,0 +1,27 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//button 클릭시, h1, h2, p, div에 red 클래스를 추가 및 삭제를 반복적으로 수행하는 함수
+			$("button").click(function(){
+				$("h1, h2, p, div").toggleClass("red");
+			});
+		});	
+	</script>
+	<style>
+		/*red 클래스의 스타일*/
+		.red{
+			color:red;
+			border:1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>HTML5</h1>
+	<h2>CSS3</h2>
+	<p>자바스크립트</p>
+	<div>제이쿼리</div><br>
+	<button>CSS 적용/해제</button>
+</body>

@@ -68,7 +68,7 @@
 
 %>
 <form method = "post">	
-<table class="common" align=center style="height:700;text-align:center" ><br><br><br><br><br><br><br>
+<table class="common" align=center style="height:700;text-align:center" ><br><br><br>
 	<tr height="8%" style="border-bottom:1px dashed #E6E6E6;">
 		<td width="5%"><%=id%></td>
 		<td width="20%" align=left><%=title%></td>

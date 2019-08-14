@@ -1,0 +1,26 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//hide id를 클릭시, img를 느리게 숨김
+			$("#hide").click(function(){
+				$("img").hide("slow");
+			});
+			$("#show").click(function(){
+				$("img").show("fast");
+			});
+			$("#toggle").click(function(){
+				$("img").toggle(3000);
+			});	
+		});	
+	</script>
+</head>
+<body>
+	<button id="hide">hide</button>
+	<button id="show">show</button>
+	<button id="toggle">toggle</button>
+	<p></p>
+	<img name="pic1" src="pic1.jpg"/>
+</body>

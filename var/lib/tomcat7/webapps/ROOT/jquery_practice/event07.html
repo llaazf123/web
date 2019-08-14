@@ -1,0 +1,37 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//button태그의 add클래스를 클릭시, h1, h2, p에 blue라는 클래스를, div에 important라는 클래스를 추가
+			$("button.add").click(function(){
+				$("h1, h2, p").addClass("blue");
+				$("div").addClass("important");
+			});
+			//button태그의 remove클래스를 클릭시, h1, h2, p에 blue라는 클래스를, div에 important라는 클래스를 제거
+			$("button.remove").click(function(){
+				$("h1, h2, p").removeClass("blue");
+				$("div").removeClass("important");
+			});
+		});	
+	</script>
+	<style>
+		/*important와 blue 클래스의 스타일*/
+		.important{
+			font-weight:bold;
+			font-size:xx-large;
+		}
+		.blue{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>HTML5</h1>
+	<h2>CSS3</h2>
+	<p>자바스크립트</p>
+	<div>제이쿼리</div><br>
+	<button class="add">CSS적용</button>
+	<button class="remove">CSS 적용 해제</button>
+</body>

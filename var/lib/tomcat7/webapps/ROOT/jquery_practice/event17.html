@@ -1,0 +1,44 @@
+<!--한글깨짐 방지-->
+<meta charset="utf-8">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		//obj와 time을 받는 함수
+		function move(obj, time){
+			$(obj).stop().animate({
+				left:-350,
+				top:0
+			}, time);
+		}
+		function back(css){
+			$(css).stop().animate({
+				left:0,
+				top:0
+			});
+		}
+	</script>
+	<style>
+		/*moving 클래스와 moving 클래스의 img 스타일*/
+		.moving{
+			border:1px solid #000000;
+			margin:20px auto 0 auto;
+			text-align:right;
+			width:550px;
+		}
+		.moving img{
+			cursor:pointer;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="init">
+		<!--moving클래스의 img 파일들을 back 함수에 적용-->
+		<button type="button" onclick="back('.moving img')">초기화 상태</button><br>
+	</div>
+	<div class="moving">
+		<img onclick="move(this, 6000)" src="pic1.jpg"/><br>
+		<img onclick="move(this, 3000)" src="pic2.jpg"/><br>
+		<img onclick="move(this, 1000)" src="pic3.jpg"/><br>
+	</div>
+</body>
