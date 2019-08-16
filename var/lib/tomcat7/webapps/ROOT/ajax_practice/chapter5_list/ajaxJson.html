@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$.ajax({
+	url: "http://192.168.23.104:8080/ajax_practice/chapter5_list/ajaxData.jsp",	//클라이언트가 요청을 보낼 서버의 URL 주소
+	type: "GET",	//HTTP 요청 방식(GET, POST)
+	dataType: "json"	//서버에서 보내줄 데이터의 타입
+	})
+//HTTP 요청이 성공하면 요청한 데이터가 done() 메소드로 전달됨.
+.done(function(json){
+	console.log(json);
+	var html = "";
+	html += "<table border=1 align=center>"
+	html += "<tr><td>이름</td><td>학번</td><td>국어</td><td>영어</td><td>수학</td></tr>"
+	for(var i = 0; i < json.twice.length; i ++) {
+		html += "<tr>";
+		html += "<td>" + json.twice[i].name + "</td>";
+		html += "<td>" + json.twice[i].studentid + "</td>";
+		html += "<td>" + json.twice[i].kor + "</td>";		
+		html += "<td>" + json.twice[i].eng + "</td>";		
+		html += "<td>" + json.twice[i].mat + "</td>";
+		html += "</tr>";
+	}
+		html += "</table>";
+		$("div").append(html);
+	
+	//for(var i=0;i<json.twice.length;i++){
+	//$("<div>").text(json.twice[i].name).appendTo("body");	//.appendTo()는 선택한 요소를 다른 요소 안에 넣음
+	//$("<div>").text(json.twice[i].studentid).appendTo("body");
+	//$("<div>").text(json.twice[i].kor).appendTo("body");
+	//$("<div>").text(json.twice[i].eng).appendTo("body");
+	//$("<div>").text(json.twice[i].mat).appendTo("body");
+	//}
+})
+//HTTP 요청이 실패하면 오류와 상태에 관한 정보가 fail() 메소드로 전달됨.
+.fail(function(xhr, status, errorThrown){
+	console.log(xhr, status, errorThrown);
+	$("#text").html("오류가 발생했습니다.<br>")
+	.append("오류명: " + errorThrown + "<br>")
+	.append("상태: " + status);
+})
+//HTTP 요청이 성공하거나 실패하는 것에 상관없이 언제나 always() 메소드가 실행됨.
+.always(function(xhr, status){
+	console.log(xhr, status);
+});
+</script>
+</head>
+<body>
+<div id="text"></div>
+</body>
+</html>
