@@ -36,8 +36,7 @@
 	
 	String[] coordxArr_split = coordxArr.split(",");
 	String[] coordyArr_split = coordyArr.split(",");
-	out.println(coordxArr_split[5]);
-	out.println(coordyArr_split[5]);
+
   %>
     <div id="map"></div>
     <script>

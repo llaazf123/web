@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.sql.*,javax.sql.*,java.io.*,java.net.*"%>
+<%@ page import="java.sql.*,javax.sql.*,java.io.*,java.net.*,java.util.*"%>
 <%@ page import="javax.xml.parsers.*,org.w3c.dom.*"%>
 <html>
 <head>
@@ -9,12 +9,16 @@
 <h1>도로공사 조회</h1>
 
 <%
+
+	
 	//파싱을 위한 준비과정
 	String strUrl = "http://openapi.its.go.kr:8082/api/NEventIdentity?key=1498271446332&ReqType=2&MinX=127.100000&MaxX=128.890000&MinY=34.100000%20&MaxY=39.100000&type=its";
 	
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     DocumentBuilder builder = factory.newDocumentBuilder();
     Document doc = builder.parse(strUrl);
+	String coordxArr="";
+	String coordyArr="";
 	
 	//태그를 가진 값들을 리스트 식으로 받기 위해 NodeList로 선언 
 	NodeList tag_eventtype = doc.getElementsByTagName("eventtype");
@@ -44,6 +48,8 @@
 	String EventDirection = "";
 	String coordx = "";
 	String coordy = "";
+
+	
 	
 	out.println("<table cellspacing=1 width='100%' border=1 style='text-align:center'>");
 	out.println("<tr>");
@@ -111,11 +117,20 @@
 		out.println("<td width=100>"+EventEndTime+"</td>");
 		out.println("<td width=100>"+EventStatusMsg+"</td>");
 		out.println("<td width=100>"+ExpectedDetourMsg+"</td>");
-		out.println("<td width=100>"+EventDirection+"</td>");%>
-		<!--<td width=100><input type="button" value="지도보기" onclick="location.href='map.jsp'"></td>-->
-<%		out.println("<td width=100><a href = 'google.jsp?coordx=" + coordx + "&coordy=" + coordy + "'>버튼</a></td>");
+		out.println("<td width=100>"+EventDirection+"</td>");
+		out.println("<td width=100><a href = 'map_one.jsp?coordx=" + coordx + "&coordy=" + coordy + "'>지도보기</a></td>");
+
+		
+		coordxArr = coordxArr + coordx + ",";
+		coordyArr = coordyArr + coordy + ",";
+		
 		out.println("</tr>");
-	}
-%>
+	}%>
+		<form method="post" action='map_all.jsp'>
+		<input type = "hidden" value = "<%=coordxArr%>" name = "coordxArr">
+		<input type = "hidden" value = "<%=coordyArr%>" name = "coordyArr">
+		<input type = "submit" value = "전체지도보기">
+		</form>
+
 </body>
 </html>
